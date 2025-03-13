@@ -26,3 +26,4 @@ Route::delete('/parkings/{id}',[parkingController::class,'delete']);
 
 Route::post('/user/register',[AuthController::class , 'register']);
 Route::post('/user/login' , [AuthController::class , 'login']);
+Route::post('/user/logout' , [AuthController::class , 'logout'])->middleware('auth:sanctum');
