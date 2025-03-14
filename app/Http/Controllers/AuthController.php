@@ -37,11 +37,14 @@ class AuthController extends Controller
         if(!$user || !Hash::check($request->password , $user->password)){
             return "invalide user";
         }
-        return $user;
+        $token = $user->createToken($request->email);
+        return ['user' => $user ,
+                'token' => $token->plainTextToken];
     }
     
     public function logout(Request $request) {
         $request->user()->tokens()->delete();
+        return "out";
     }
         
 }
