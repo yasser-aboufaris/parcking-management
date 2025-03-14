@@ -31,7 +31,7 @@ class ReservationController extends Controller
         }
     
         $reservation = Reservation::create([
-            'parking_id' => $idHouse,
+            'parking_id' => $idParck,
             'user_id' => $userId,
             'start_date' => $startDate,
             'end_date' => $endDate,
